@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List Login Page</title>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/styling.css" rel="stylesheet">
+
+</head>
+<body>
+        <div class="bg-text">    
+                    <form action="userHome.html" name="myForm" id="myForm">
+                        <div class="mb-3 formHead"><h3>Login to check your tasks</h3></div>
+
+                        <div class="mb-3" style="width: 96%;">
+                        <label for="exampleInputEmail1" class="form-label">UserName</label>
+                        <input type="text" class="form-control" name="UserName" placeholder="Enter Username" id="inputUserName" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <div class="d-flex">
+                                <div style="width: 96%;" ><input type="password" class="form-control"name="password" placeholder="Enter Password" id="exampleInputPassword1"></div>
+                                <div style="width: 4%; color: white; border-radius: 15%; text-align: center;" onclick="visiblePassword();"><p>
+                                    <i class="fa fa-eye-slash"></i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary ">SignIn</button>
+                    </form>
+        </div>
+<script>
+ // form validation    
+   document.getElementById("myForm").addEventListener("submit",function(evt){ 
+        var UserName = document.myForm.UserName.value;
+        var password = document.myForm.password.value;
+        if (UserName == "" || password == "") {
+            // .preventDefault(); in addEventListener to stop default form redirection action
+            evt.preventDefault();
+            alert("Please enter UserName and Password");
+        }
+        else if (UserName != "admin" || password != 12345 ){
+            evt.preventDefault();
+            alert("Invalid Username/Password !!!!");
+        }
+        else if (UserName == "admin" && password == "12345") {
+        }
+
+    });
+// form validation ends here
+// show password
+function visiblePassword(){ 
+       var y = document.getElementsByTagName("i");
+       var x = document.getElementById("exampleInputPassword1");
+
+       if (x.type === "password") {
+         x.type = "text";
+         y[0].removeAttribute("class","fa fa-eye-slash");
+         y[0].setAttribute("class","fa fa-eye");
+       } else {
+         x.type = "password";
+         y[0].removeAttribute("class","fa fa-eye");
+         y[0].setAttribute("class","fa fa-eye-slash")
+       }      
+}
+</script>        
+</body>
+</html>
