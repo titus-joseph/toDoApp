@@ -50,5 +50,11 @@ form{
 
 .completed-task{
     /* color:rgb(129, 5, 5);   */
-    background-color:green;
+    background-color:rgb(27, 105, 27);
+    color: rgb(126, 1, 63);
+}
+#demo{
+    background-color: rgb(101, 108, 204);
+    width: 50%;
+    padding-left: 100%;
 }

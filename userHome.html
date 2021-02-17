@@ -57,13 +57,13 @@ xhttp.onreadystatechange = function(){
         Objlist = JSON.parse(this.responseText);
         for (let i = 0; i < Objlist.length; i++) {
             if (Objlist[i].completed===true) {
-                output += "<label class='list-group-item completed-task'>"+"<input class='form-check-input me-1' type='checkbox' checked disabled id="+i+">"+Objlist[i].title+"</label>"
+                output += "<label class='list-group-item completed-task'>"+"<input class='form-check-input me-1' type='checkbox' checked='true' id="+i+">"+Objlist[i].title+"</label>"
                }
             else{
                 output += "<label class='list-group-item'>"+"<input class='form-check-input me-1 myCheck' type='checkbox' onchange = flagCheck();  id="+i+">"+Objlist[i].title+"</label>"
                 }  
             document.getElementById("demo").innerHTML="<div class='list-group'>"+output+"</div>";
-            // document.getElementById("demo").style.padding="15px"; 
+             document.getElementById("demo").style.padding="15px"; 
             // document.getElementById("demo").style.fontSize="20px"; 
             // document.getElementById("demo").style.fontFamily="TimesNewRoman";                    
         }
