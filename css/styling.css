@@ -31,14 +31,14 @@ border-radius: 10%;
 
 
 form{
-    background-color: rgb(0,0,0);
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color:white;
+    /* background-color: rgba(0, 0, 0, 0.75); */
     z-index: 2;
     color: white;
     font-weight: bold;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 2%;
-    width: 35%;
+    width: 30%;
     top: 20%;
     left: 33%;
     position: absolute;       
@@ -51,7 +51,7 @@ form{
 .completed-task{
     /* color:rgb(129, 5, 5);   */
     background-color:rgb(27, 105, 27);
-    color: rgb(126, 1, 63);
+    color: rgb(233, 229, 222);
 }
 #demo{
     background-color: rgb(101, 108, 204);
