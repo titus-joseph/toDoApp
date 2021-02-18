@@ -17,30 +17,20 @@
 </head>
 
 <body>
-        <!-- NavBar starts here -->
+      
     
         <nav class="navbar navbar-expand-lg ">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto ">    
-              <!-- <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ToDo List</a>
-              </li> -->
+             
               <li class="nav-item">
                 <a class="nav-link" href="index.html">Logout</a>
               </li>                
             </ul>   
     </nav>
 
-<!-- NavBar ends here --> 
+
 <div id="content">
-    <!-- <div class="btn-group" style="float: right;">
-        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-          Options
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li onclick="del();"><a class="dropdown-item" href="#">Clear completed tasks</a></li>
-            <li onclick="add();"><a class="dropdown-item" href="#">Add tasks</a></li>
-          </ul>
-      </div> -->
+    
     <h3>To Do Task List</h3>
     <div id="demo"></div>
      <div id="addTask"></div>
@@ -65,8 +55,7 @@ xhttp.onreadystatechange = function(){
                 }  
             document.getElementById("demo").innerHTML="<div class='list-group'>"+output+"</div>";
              document.getElementById("demo").style.padding="15px"; 
-            // document.getElementById("demo").style.fontSize="20px"; 
-            // document.getElementById("demo").style.fontFamily="TimesNewRoman";                    
+                          
         }
         
     }
@@ -75,8 +64,9 @@ xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
 xhttp.send();
 
 function flagCheck(){
+   
     var promise=flagChecked();
-    promise.then(function(){console.log("success")})
+    promise.then(function(){console.log("5 task completed")})
 }    
 function flagChecked(){    
     var flag = 0;   
@@ -86,6 +76,7 @@ function flagChecked(){
         for (let i = 0; i < size; i++) {
         if(checkBox[i].checked == true){
             flag++;    
+           
         }
     }
     if(flag%5 === 0)
@@ -99,59 +90,7 @@ function flagChecked(){
     })    
 }
 
-var addedTasks={};
-function add(){
-addedTasks.id=prompt("Enter ID");
-addedTasks.UserId=prompt("Enter UserId");
-addedTasks.title=prompt("Enter title");
-alert("Adding newtasks, status of completion is false");
-addedTasks.completed=false;
-console.log(Objlist.length);
-Objlist.push(addedTasks);
-console.log(Objlist.length);
-addedTasks={};
-output = "";
-for (let i = 0; i < Objlist.length; i++) {
-            if (Objlist[i].completed===true) {
-                output += "<label class='list-group-item'>"+"<input class='form-check-input me-1' type='checkbox' checked disabled id="+i+">"+Objlist[i].title+"</label>"
-               }
-            else{
-                output += "<label class='list-group-item'>"+"<input class='form-check-input me-1 myCheck' type='checkbox' onchange = flagCheck();  id="+i+">"+Objlist[i].title+"</label>"
-                }  
-         
-            document.getElementById("demo").innerHTML="<div class='list-group'>"+output+"</div>";
-            document.getElementById("demo").style.padding="20px"; 
-            document.getElementById("demo").style.fontSize="25px"; 
-            document.getElementById("demo").style.fontFamily="TimesNewRoman";                     
-        }            
-}   
-    
 
-function del(){
-    var idArr=[];
-    alert("Clearing completed tasks....");
-    output="";   
-    console.log(Objlist.length); 
-    var inputClass=document.getElementsByClassName("form-check-input");
-    var splicArr=[];
-    for (let i = 0; i < inputClass.length; i++) {
-            if (inputClass[i].checked===true){
-                splicArr.push(i);
-            }  
-        }
-        console.log(splicArr);
-        for (let i = 0; i < splicArr.length; i++) {
-            delete Objlist[splicArr[i]];
-             } 
-             Objlist = Objlist.filter(function(e){return e});        
-             console.log(Objlist);
-             for (let i = 0; i < Objlist.length; i++) {
-                output += "<label class='list-group-item'>"+"<input class='form-check-input me-1 myCheck' type='checkbox' onchange = flagCheck();  id="+i+">"+Objlist[i].title+"</label>"
-                }  
-            document.getElementById("demo").innerHTML="<div class='list-group'>"+output+"</div>";
-            // document.getElementById("demo").style.padding="20px"; 
-            // document.getElementById("demo").style.fontSize="25px"; 
-            // document.getElementById("demo").style.fontFamily="TimesNewRoman"; 
-        }
+
 </script>
 </body>
