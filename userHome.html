@@ -32,7 +32,7 @@
 
 <!-- NavBar ends here --> 
 <div id="content">
-    <div class="btn-group" style="float: right;">
+    <!-- <div class="btn-group" style="float: right;">
         <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
           Options
         </button>
@@ -40,7 +40,7 @@
             <li onclick="del();"><a class="dropdown-item" href="#">Clear completed tasks</a></li>
             <li onclick="add();"><a class="dropdown-item" href="#">Add tasks</a></li>
           </ul>
-      </div>
+      </div> -->
     <h3>To Do Task List</h3>
     <div id="demo"></div>
      <div id="addTask"></div>
@@ -93,7 +93,7 @@ function flagChecked(){
     var j=(flag/5);
    
         if ((5*j)!=0) {
-           resolve(alert("Congratz."+(5*j)+"tasks have been completed"));
+           resolve(alert("Congratulations."+(5*j)+"tasks are completed"));
         }
     }    
     })    
